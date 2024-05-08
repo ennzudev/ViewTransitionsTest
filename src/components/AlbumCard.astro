@@ -1,0 +1,32 @@
+---
+import { lazy } from 'astro/zod';
+import { Image } from 'astro:assets';
+
+interface AlbumCardProps {
+  id: number;
+  title: string;
+  imageUrl: string;
+}
+
+const { id, title, imageUrl } = Astro.props as AlbumCardProps;
+---
+
+<a href={`/album/${id}`} class="flex flex-col card transition-all duration-500" >
+  <Image src={imageUrl} alt={`Portada del álbum: ${title}`} class="h-auto" width={200} inferSize loading={'eager'} transition:name=`album ${id} image`/>
+  <h3 class="text-center">{title}</h3>
+</a>
+
+<style>
+  .card {
+    overflow: hidden;
+    margin: auto;
+  }
+
+  img {
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin: 0.5rem 0;
+  }

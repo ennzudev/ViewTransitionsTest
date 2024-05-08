@@ -1,0 +1,10 @@
+---
+import AlbumCard from '../components/AlbumCard.astro';
+import albums from '../../albums.json'
+---
+
+<div class="flex pt-24">
+    {albums.map(album => (
+        <AlbumCard key={album.id} id={album.id} title={album.title} imageUrl={album.imageUrl} />
+    ))}
+</div>

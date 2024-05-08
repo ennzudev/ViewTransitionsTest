@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "Ye",
+        "imageUrl": "https://m.media-amazon.com/images/I/81WtBMyGKqL._UF1000,1000_QL80_.jpg"
+    },
+    {
+        "id": 2,
+        "title": "My Beautiful Dark Twisted Fantasy",
+        "imageUrl": "https://i.scdn.co/image/ab67616d0000b273d9194aa18fa4c9362b47464f"
+    },
+    {
+        "id": 3,
+        "title": "Graduation",
+        "imageUrl": "https://m.media-amazon.com/images/I/71pxGj4RoVS.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Life of Pablo",
+        "imageUrl": "https://www.levelman.com/content/images/2023/08/the-life-of-pablo-kanye-west-album-cover.jpg"
+    }
+]
