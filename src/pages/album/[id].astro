@@ -1,0 +1,33 @@
+---
+// Importa los componentes necesarios
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+
+// Importa los datos de los álbumes
+import albums from '../../../albums.json';
+
+// Obtiene el ID desde la URL
+const {id} = Astro.params;
+
+// Busca el álbum basado en el ID
+const {imageUrl, title} = albums.find(album => album.id.toString() === id) as { id: number; title: string; imageUrl: string; };
+
+// Asegúrate de que el álbum existe
+// if (!album) {
+//   return Astro.redirect('/404');
+// }
+---
+
+<Layout title={`Álbum: ${title}`}>
+  <article class="flex flex-col w-full items-center">
+    <h1>{title}</h1>
+    <Image src={imageUrl} alt={`Portada del álbum: ${title}`} class="h-auto" width={600} inferSize loading={'eager'} transition:name=`album ${id} image`/>
+  </article>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+</style>
